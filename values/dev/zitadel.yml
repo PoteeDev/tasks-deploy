@@ -8,7 +8,7 @@ zitadel:
       Enabled: false
     Database:
       Cockroach:
-        Host: crdb-public
+        Host: crdb-public.cockroachdb
 
 
 ingress:
