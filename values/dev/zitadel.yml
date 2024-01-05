@@ -1,0 +1,23 @@
+replicaCount: 1
+zitadel:
+  masterkey: "MasterkeyNeedsToHave32Characters"
+  configmapConfig:
+    ExternalSecure: false
+    ExternalDomain: iam.explabs.local
+    TLS:
+      Enabled: false
+    Database:
+      Cockroach:
+        Host: crdb-public
+
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: {}
+  hosts:
+    - host: iam.explabs.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []

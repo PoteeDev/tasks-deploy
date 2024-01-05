@@ -1,0 +1,7 @@
+fullnameOverride: crdb
+conf:
+  single-node: true
+tls:
+  enabled: false
+statefulset:
+  replicas: 1

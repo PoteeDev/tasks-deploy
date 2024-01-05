@@ -1,0 +1,32 @@
+config:
+  clientID: "239587556822433847@tasks"
+  # OAuth client secret
+  clientSecret: "Pev4SxKa3yTE2jKHCbhl654SGuWvNWBkQho2kbWPzNySwxvx3StM12iw7QqH1y1c"
+  configFile: |
+    provider = "oidc"
+    user_id_claim = "sub" #uses the subject as ID instead of the email
+    provider_display_name = "ZITADEL"
+    redirect_url = "http://explabs.local/oauth2/callback"
+    oidc_issuer_url = "https://tasks-8rtnty.zitadel.cloud"
+    upstreams = [
+        "http://server-example"
+    ]
+    email_domains = [
+        "*"
+    ]
+    pass_access_token = true
+    cookie_secret = "SOME_SECRET_HERE"
+    skip_provider_button = true
+    cookie_secure = false #localdev only false
+    # oidc_groups_claim = "role"
+    # allowed_groups = ["users", "students"]
+
+extraArgs: 
+  pass-access-token: true
+
+ingress:
+  enabled: true
+  className: nginx
+  path: /
+  hosts:
+    - explabs.local

@@ -1,0 +1,13 @@
+releases:
+  - name: cockroachdb
+    repo: cockroachdb
+  - name: zitadel
+    repo: zitadel
+    depends_on:
+      - cockroachdb@cockroachdb
+  - name: oauth2-proxy
+    repo: oauth2-proxy
+  - name: minio
+    repo: minio
+  - name: headscale
+    repo: oci://ghcr.io/gabe565/charts
